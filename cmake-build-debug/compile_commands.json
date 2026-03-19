@@ -1,0 +1,26 @@
+[
+{
+  "directory": "D:/git/oop_git/cmake-build-debug",
+  "command": "\"D:\\clion\\CLion 2025.3.2\\bin\\mingw\\bin\\g++.exe\" -g -fdiagnostics-color=always -o CMakeFiles\\oop_git.dir\\labs2\\main.cpp.obj -c D:\\git\\oop_git\\labs2\\main.cpp",
+  "file": "D:/git/oop_git/labs2/main.cpp",
+  "output": "D:/git/oop_git/cmake-build-debug/CMakeFiles/oop_git.dir/labs2/main.cpp.obj"
+},
+{
+  "directory": "D:/git/oop_git/cmake-build-debug",
+  "command": "\"D:\\clion\\CLion 2025.3.2\\bin\\mingw\\bin\\g++.exe\" -g -fdiagnostics-color=always -o CMakeFiles\\oop_git.dir\\labs2\\Characters1.cpp.obj -c D:\\git\\oop_git\\labs2\\Characters1.cpp",
+  "file": "D:/git/oop_git/labs2/Characters1.cpp",
+  "output": "D:/git/oop_git/cmake-build-debug/CMakeFiles/oop_git.dir/labs2/Characters1.cpp.obj"
+},
+{
+  "directory": "D:/git/oop_git/cmake-build-debug",
+  "command": "\"D:\\clion\\CLion 2025.3.2\\bin\\mingw\\bin\\g++.exe\" -g -fdiagnostics-color=always -o CMakeFiles\\oop_git.dir\\labs3\\carmain.cpp.obj -c D:\\git\\oop_git\\labs3\\carmain.cpp",
+  "file": "D:/git/oop_git/labs3/carmain.cpp",
+  "output": "D:/git/oop_git/cmake-build-debug/CMakeFiles/oop_git.dir/labs3/carmain.cpp.obj"
+},
+{
+  "directory": "D:/git/oop_git/cmake-build-debug",
+  "command": "\"D:\\clion\\CLion 2025.3.2\\bin\\mingw\\bin\\g++.exe\" -g -fdiagnostics-color=always -o CMakeFiles\\oop_git.dir\\labs3\\made.cpp.obj -c D:\\git\\oop_git\\labs3\\made.cpp",
+  "file": "D:/git/oop_git/labs3/made.cpp",
+  "output": "D:/git/oop_git/cmake-build-debug/CMakeFiles/oop_git.dir/labs3/made.cpp.obj"
+}
+]
