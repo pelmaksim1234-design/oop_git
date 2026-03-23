@@ -7,16 +7,16 @@ using namespace std;
 int main() {
 
     // звичайний об'єкт
-    Car a("BMW", 2015);
+    Car a("touran", 2012);
 
     // 1. Copy constructor
     Car b = a;
 
     // 2. Move constructor
-    Car c = Car("Audi", 2020);
+    Car c = Car("caddy", 2009);
 
     // 4. const об'єкт
-    const Car d("Tesla", 2022);
+    const Car d("passat", 2012);
     d.show();
 
     // 5. static
