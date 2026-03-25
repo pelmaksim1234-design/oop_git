@@ -1,32 +1,33 @@
 #pragma once
 #include <iostream>
-using namespace std;
+#include <string> // Обов'язково для std::string
 
 class Car {
 private:
-    string model;
+    std::string model;
     int year;
+    static int count; // Статичне поле краще тримати в private[cite: 6]
 
 public:
-    Car(string model, int year);
+    Car(std::string model = "", int year = 0);
 
     // 1. Copy constructor
     Car(const Car& other);
 
     // 2. Move constructor
-    Car(Car&& other);
+    Car(Car&& other) noexcept; // Рекомендується додавати noexcept[cite: 6]
 
     // 4. const метод
     void show() const;
 
-    // 5. static
-    static int count;
+    // 5. static метод
     static void showCount();
 
-    // оператори
-    Car operator+(const Car& other);
-    Car operator++();
+    // 6. Оператори
+    Car operator+(const Car& other) const;
+    Car& operator++(); // Префіксний ++ зазвичай повертає посилання &[cite: 6]
 
-    friend ostream& operator<<(ostream& out, const Car& c);
-    friend istream& operator>>(istream& in, Car& c);
+    // 7. Дружні оператори вводу/виводу[cite: 6]
+    friend std::ostream& operator<<(std::ostream& out, const Car& c);
+    friend std::istream& operator>>(std::istream& in, Car& c);
 };

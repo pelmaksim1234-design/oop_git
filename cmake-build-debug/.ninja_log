@@ -1,0 +1,7 @@
+# ninja log v6
+1	642	7961474145716602	CMakeFiles/lab4.dir/labs4/cars.cpp.obj	d936650ab7a4f3f4
+5	763	7961474145756600	CMakeFiles/lab4.dir/labs4/vehicle.cpp.obj	82fb465dc4558a1
+763	1024	7961474153332780	lab4.exe	b2d1da9cd68a3045
+3	691	7961485755366982	CMakeFiles/lab3.dir/labs3/car.cpp.obj	b811e2f3789ff7a8
+9	716	7961485755416974	CMakeFiles/lab3.dir/labs3/made.cpp.obj	ab43c0108263f882
+717	802	7961485762496241	lab3.exe	fee55ba2dd3fbd7d

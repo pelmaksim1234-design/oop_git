@@ -1,59 +1,60 @@
 #include "made.h"
-#include <iostream>
+
 using namespace std;
 
-// static
+// Ініціалізація статичної змінної
 int Car::count = 0;
 
-// конструктор
-Car::Car(string model, int year) {
-    this->model = model;
-    this->year = year;
+// Конструктор
+Car::Car(string model, int year) : model(model), year(year) {
     count++;
 }
 
-// copy
-Car::Car(const Car& other) {
-    model = other.model;
-    year = other.year;
+// Copy constructor
+Car::Car(const Car& other) : model(other.model), year(other.year) {
     count++;
 }
 
-// move
-Car::Car(Car&& other) {
-    model = move(other.model);
-    year = other.year;
+// Move constructor
+Car::Car(Car&& other) noexcept : model(move(other.model)), year(other.year) {
+    // При move-конструкторі кількість об'єктів не змінюється (один створюється,
+    // але інший зазвичай скоро буде знищений), проте для точності лічильника
+    // у складних системах краще враховувати створення нового.
+    count++;
 }
 
-// const метод
+// const метод[cite: 5]
 void Car::show() const {
     cout << model << " " << year << endl;
 }
 
-// static метод
+// static метод[cite: 5]
 void Car::showCount() {
-    cout << "Count: " << count << endl;
+    cout << "Total cars: " << count << endl;
 }
 
-// +
-Car Car::operator+(const Car& other) {
-    return Car(model + "+" + other.model, year);
+// Оператор +[cite: 5]
+Car Car::operator+(const Car& other) const {
+    return Car(model + " & " + other.model, (year + other.year) / 2);
 }
 
-// ++
-Car Car::operator++() {
-    year++;
+// Оператор ++ (префіксний)[cite: 5]
+Car& Car::operator++() {
+    this->year++;
     return *this;
 }
 
-// <<
+// Оператор <<[cite: 5]
 ostream& operator<<(ostream& out, const Car& c) {
-    out << c.model << " " << c.year;
+    out << "Model: " << c.model << ", Year: " << c.year;
     return out;
 }
 
-// >>
+// Оператор >>[cite: 5]
 istream& operator>>(istream& in, Car& c) {
-    in >> c.model >> c.year;
+    cout << "Enter model: ";
+    in >> c.model;
+    cout << "Enter year: ";
+    in >> c.year;
     return in;
 }

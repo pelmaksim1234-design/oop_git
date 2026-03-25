@@ -41,60 +41,130 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = D$:/git/oop_git/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target oop_git
+# Object build statements for EXECUTABLE target lab2
 
 
 #############################################
-# Order-only phony target for oop_git
+# Order-only phony target for lab2
 
-build cmake_object_order_depends_target_oop_git: phony || .
+build cmake_object_order_depends_target_lab2: phony || .
 
-build CMakeFiles/oop_git.dir/labs2/main.cpp.obj: CXX_COMPILER__oop_git_unscanned_Debug D$:/git/oop_git/labs2/main.cpp || cmake_object_order_depends_target_oop_git
+build CMakeFiles/lab2.dir/labs2/main.cpp.obj: CXX_COMPILER__lab2_unscanned_Debug D$:/git/oop_git/labs2/main.cpp || cmake_object_order_depends_target_lab2
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\oop_git.dir\labs2\main.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\oop_git.dir
-  OBJECT_FILE_DIR = CMakeFiles\oop_git.dir\labs2
+  DEP_FILE = CMakeFiles\lab2.dir\labs2\main.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\lab2.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab2.dir\labs2
 
-build CMakeFiles/oop_git.dir/labs2/Characters1.cpp.obj: CXX_COMPILER__oop_git_unscanned_Debug D$:/git/oop_git/labs2/Characters1.cpp || cmake_object_order_depends_target_oop_git
+build CMakeFiles/lab2.dir/labs2/Characters1.cpp.obj: CXX_COMPILER__lab2_unscanned_Debug D$:/git/oop_git/labs2/Characters1.cpp || cmake_object_order_depends_target_lab2
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\oop_git.dir\labs2\Characters1.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\oop_git.dir
-  OBJECT_FILE_DIR = CMakeFiles\oop_git.dir\labs2
-
-build CMakeFiles/oop_git.dir/labs3/carmain.cpp.obj: CXX_COMPILER__oop_git_unscanned_Debug D$:/git/oop_git/labs3/carmain.cpp || cmake_object_order_depends_target_oop_git
-  CONFIG = Debug
-  DEP_FILE = CMakeFiles\oop_git.dir\labs3\carmain.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\oop_git.dir
-  OBJECT_FILE_DIR = CMakeFiles\oop_git.dir\labs3
-
-build CMakeFiles/oop_git.dir/labs3/made.cpp.obj: CXX_COMPILER__oop_git_unscanned_Debug D$:/git/oop_git/labs3/made.cpp || cmake_object_order_depends_target_oop_git
-  CONFIG = Debug
-  DEP_FILE = CMakeFiles\oop_git.dir\labs3\made.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\oop_git.dir
-  OBJECT_FILE_DIR = CMakeFiles\oop_git.dir\labs3
+  DEP_FILE = CMakeFiles\lab2.dir\labs2\Characters1.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\lab2.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab2.dir\labs2
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target oop_git
+# Link build statements for EXECUTABLE target lab2
 
 
 #############################################
-# Link the executable oop_git.exe
+# Link the executable lab2.exe
 
-build oop_git.exe: CXX_EXECUTABLE_LINKER__oop_git_Debug CMakeFiles/oop_git.dir/labs2/main.cpp.obj CMakeFiles/oop_git.dir/labs2/Characters1.cpp.obj CMakeFiles/oop_git.dir/labs3/carmain.cpp.obj CMakeFiles/oop_git.dir/labs3/made.cpp.obj
+build lab2.exe: CXX_EXECUTABLE_LINKER__lab2_Debug CMakeFiles/lab2.dir/labs2/main.cpp.obj CMakeFiles/lab2.dir/labs2/Characters1.cpp.obj
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\oop_git.dir
+  OBJECT_DIR = CMakeFiles\lab2.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = oop_git.exe
-  TARGET_IMPLIB = liboop_git.dll.a
-  TARGET_PDB = oop_git.exe.dbg
+  TARGET_FILE = lab2.exe
+  TARGET_IMPLIB = liblab2.dll.a
+  TARGET_PDB = lab2.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target lab3
+
+
+#############################################
+# Order-only phony target for lab3
+
+build cmake_object_order_depends_target_lab3: phony || .
+
+build CMakeFiles/lab3.dir/labs3/car.cpp.obj: CXX_COMPILER__lab3_unscanned_Debug D$:/git/oop_git/labs3/car.cpp || cmake_object_order_depends_target_lab3
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\lab3.dir\labs3\car.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\lab3.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab3.dir\labs3
+
+build CMakeFiles/lab3.dir/labs3/made.cpp.obj: CXX_COMPILER__lab3_unscanned_Debug D$:/git/oop_git/labs3/made.cpp || cmake_object_order_depends_target_lab3
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\lab3.dir\labs3\made.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\lab3.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab3.dir\labs3
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target lab3
+
+
+#############################################
+# Link the executable lab3.exe
+
+build lab3.exe: CXX_EXECUTABLE_LINKER__lab3_Debug CMakeFiles/lab3.dir/labs3/car.cpp.obj CMakeFiles/lab3.dir/labs3/made.cpp.obj
+  CONFIG = Debug
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\lab3.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = lab3.exe
+  TARGET_IMPLIB = liblab3.dll.a
+  TARGET_PDB = lab3.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target lab4
+
+
+#############################################
+# Order-only phony target for lab4
+
+build cmake_object_order_depends_target_lab4: phony || .
+
+build CMakeFiles/lab4.dir/labs4/cars.cpp.obj: CXX_COMPILER__lab4_unscanned_Debug D$:/git/oop_git/labs4/cars.cpp || cmake_object_order_depends_target_lab4
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\lab4.dir\labs4\cars.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\lab4.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab4.dir\labs4
+
+build CMakeFiles/lab4.dir/labs4/vehicle.cpp.obj: CXX_COMPILER__lab4_unscanned_Debug D$:/git/oop_git/labs4/vehicle.cpp || cmake_object_order_depends_target_lab4
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\lab4.dir\labs4\vehicle.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\lab4.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab4.dir\labs4
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target lab4
+
+
+#############################################
+# Link the executable lab4.exe
+
+build lab4.exe: CXX_EXECUTABLE_LINKER__lab4_Debug CMakeFiles/lab4.dir/labs4/cars.cpp.obj CMakeFiles/lab4.dir/labs4/vehicle.cpp.obj
+  CONFIG = Debug
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\lab4.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = lab4.exe
+  TARGET_IMPLIB = liblab4.dll.a
+  TARGET_PDB = lab4.exe.dbg
 
 
 #############################################
@@ -122,7 +192,11 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build oop_git: phony oop_git.exe
+build lab2: phony lab2.exe
+
+build lab3: phony lab3.exe
+
+build lab4: phony lab4.exe
 
 # =============================================================================
 # Folder targets.
@@ -132,7 +206,7 @@ build oop_git: phony oop_git.exe
 #############################################
 # Folder: D:/git/oop_git/cmake-build-debug
 
-build all: phony oop_git.exe
+build all: phony lab2.exe lab3.exe lab4.exe
 
 # =============================================================================
 # Built-in targets
