@@ -1,5 +1,5 @@
-D:/git/oop_git/cmake-build-debug/CMakeFiles/lab2.dir
-D:/git/oop_git/cmake-build-debug/CMakeFiles/lab3.dir
-D:/git/oop_git/cmake-build-debug/CMakeFiles/lab4.dir
-D:/git/oop_git/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/git/oop_git/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Projects/oop_git/cmake-build-debug/CMakeFiles/lab2.dir
+C:/Projects/oop_git/cmake-build-debug/CMakeFiles/lab3.dir
+C:/Projects/oop_git/cmake-build-debug/CMakeFiles/lab4.dir
+C:/Projects/oop_git/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Projects/oop_git/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,19 +1,30 @@
 #include "vehicle.h"
 
 #include <iostream>
+#include <utility>
 
 int main() {
-    Garage g;
+    Squad squad;
 
-    Car* c1 = new Car("Caddy", 2009);
-    ElectricCar* c2 = new ElectricCar("Tesla", 2022, 4, 100);
+    Knight* knight = new Knight("Andriy", 200, 55, Weapon("Lion Blade", 35), 45,
+                                "Golden Order");
+    Boss* boss = new Boss("Dragon", 320, 50, 5);
 
-    g.addVehicle(c1);
-    g.addVehicle(c2);
+    Warrior baseWarrior("Bohdan", 170, 25, Weapon("Battle Axe", 28), 30);
+    Warrior copiedWarrior(baseWarrior);
+    Warrior movedWarrior(std::move(baseWarrior));
+    Warrior assignedWarrior;
+    assignedWarrior = copiedWarrior;
 
-    std::cout << "\n--- Garage contains: ---\n";
-    g.showAll();
-    std::cout << "------------------------\n";
+    squad.addMember(knight);
+    squad.addMember(boss);
+    squad.addMember(new Warrior(copiedWarrior));
+    squad.addMember(new Warrior(std::move(movedWarrior)));
+    squad.addMember(new Warrior(assignedWarrior));
+
+    std::cout << "\n--- Squad contains: ---\n";
+    squad.showAll();
+    std::cout << "-----------------------\n";
 
     return 0;
 }

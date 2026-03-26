@@ -1,60 +1,81 @@
 #include "made.h"
 
+#include <utility>
+
 using namespace std;
 
-// Ініціалізація статичної змінної
-int Car::count = 0;
+int Character::count = 0;
 
-// Конструктор
-Car::Car(string model, int year) : model(model), year(year) {
+Character::Character(string name, int health, int level)
+    : name(std::move(name)), health(health), level(level) {
     count++;
 }
 
-// Copy constructor
-Car::Car(const Car& other) : model(other.model), year(other.year) {
+Character::Character(const Character& other)
+    : name(other.name), health(other.health), level(other.level) {
     count++;
 }
 
-// Move constructor
-Car::Car(Car&& other) noexcept : model(move(other.model)), year(other.year) {
-    // При move-конструкторі кількість об'єктів не змінюється (один створюється,
-    // але інший зазвичай скоро буде знищений), проте для точності лічильника
-    // у складних системах краще враховувати створення нового.
+Character::Character(Character&& other) noexcept
+    : name(std::move(other.name)), health(other.health), level(other.level) {
     count++;
 }
 
-// const метод[cite: 5]
-void Car::show() const {
-    cout << model << " " << year << endl;
-}
-
-// static метод[cite: 5]
-void Car::showCount() {
-    cout << "Total cars: " << count << endl;
-}
-
-// Оператор +[cite: 5]
-Car Car::operator+(const Car& other) const {
-    return Car(model + " & " + other.model, (year + other.year) / 2);
-}
-
-// Оператор ++ (префіксний)[cite: 5]
-Car& Car::operator++() {
-    this->year++;
+Character& Character::train(int gainedLevels) {
+    this->level += gainedLevels;
+    this->health += gainedLevels * 5;
     return *this;
 }
 
-// Оператор <<[cite: 5]
-ostream& operator<<(ostream& out, const Car& c) {
-    out << "Model: " << c.model << ", Year: " << c.year;
+void Character::show() const {
+    cout << "Character: " << name
+         << ", HP: " << health
+         << ", Level: " << level << endl;
+}
+
+const string& Character::getName() const {
+    return name;
+}
+
+int Character::getHealth() const {
+    return health;
+}
+
+int Character::getLevel() const {
+    return level;
+}
+
+void Character::showCount() {
+    cout << "Created characters: " << count << endl;
+}
+
+Character Character::operator+(const Character& other) const {
+    return Character(
+        name + "-" + other.name,
+        (health + other.health) / 2,
+        (level + other.level) / 2
+    );
+}
+
+Character& Character::operator++() {
+    ++level;
+    health += 10;
+    return *this;
+}
+
+ostream& operator<<(ostream& out, const Character& character) {
+    out << "Name: " << character.name
+        << ", HP: " << character.health
+        << ", Level: " << character.level;
     return out;
 }
 
-// Оператор >>[cite: 5]
-istream& operator>>(istream& in, Car& c) {
-    cout << "Enter model: ";
-    in >> c.model;
-    cout << "Enter year: ";
-    in >> c.year;
+istream& operator>>(istream& in, Character& character) {
+    cout << "Enter name: ";
+    in >> character.name;
+    cout << "Enter health: ";
+    in >> character.health;
+    cout << "Enter level: ";
+    in >> character.level;
     return in;
 }

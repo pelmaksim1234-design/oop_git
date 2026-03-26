@@ -1,40 +1,38 @@
 #include <iostream>
+#include <utility>
+
 #include "made.h"
 
 using namespace std;
 
 int main() {
-    // Звичайний об'єкт[cite: 4]
-    Car a("Touran", 2009);
+    Character hero("Andriy", 120, 5);
 
-    // 1. Copy constructor[cite: 4]
-    Car b = a;
+    Character copyHero = hero;
+    Character tempHero("Master", 180, 9);
+    Character movedHero = std::move(tempHero);
 
-    // 2. Move constructor[cite: 4]
-    Car c = Car("Caddy", 2009);
+    hero.train(2);
+    cout << "After train() with this pointer: " << hero << endl;
 
-    // 4. const об'єкт[cite: 4]
-    const Car d("Passat", 2012);
-    d.show();
+    const Character support("Healer", 90, 4);
+    support.show();
+    cout << "Const character name: " << support.getName()
+         << ", level: " << support.getLevel() << endl;
 
-    // 5. static[cite: 4]
-    Car::showCount();
+    Character::showCount();
 
-    // 6. Оператор +[cite: 4]
-    Car e = a + c;
+    Character squadLeader = hero + movedHero;
+    ++squadLeader;
 
-    // 6. Оператор ++[cite: 4]
-    ++e;
+    cout << "Combined character after level up: " << squadLeader << endl;
+    cout << "Copied character: " << copyHero << endl;
 
-    // 7. Вивід[cite: 4]
-    cout << "Car E after ++: " << e << endl;
+    Character newHero;
+    cin >> newHero;
+    cout << "New character: " << newHero << endl;
 
-    // 7. Ввід[cite: 4]
-    Car f;
-    cin >> f;
-    cout << "New car added: " << f << endl;
-
-    Car::showCount();
+    Character::showCount();
 
     return 0;
 }

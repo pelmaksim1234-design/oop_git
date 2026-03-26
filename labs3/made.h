@@ -1,33 +1,30 @@
 #pragma once
-#include <iostream>
-#include <string> // Обов'язково для std::string
 
-class Car {
+#include <iostream>
+#include <string>
+
+class Character {
 private:
-    std::string model;
-    int year;
-    static int count; // Статичне поле краще тримати в private[cite: 6]
+    std::string name;
+    int health;
+    int level;
+    static int count;
 
 public:
-    Car(std::string model = "", int year = 0);
+    Character(std::string name = "Hero", int health = 100, int level = 1);
+    Character(const Character& other);
+    Character(Character&& other) noexcept;
 
-    // 1. Copy constructor
-    Car(const Car& other);
-
-    // 2. Move constructor
-    Car(Car&& other) noexcept; // Рекомендується додавати noexcept[cite: 6]
-
-    // 4. const метод
+    Character& train(int gainedLevels);
     void show() const;
-
-    // 5. static метод
+    const std::string& getName() const;
+    int getHealth() const;
+    int getLevel() const;
     static void showCount();
 
-    // 6. Оператори
-    Car operator+(const Car& other) const;
-    Car& operator++(); // Префіксний ++ зазвичай повертає посилання &[cite: 6]
+    Character operator+(const Character& other) const;
+    Character& operator++();
 
-    // 7. Дружні оператори вводу/виводу[cite: 6]
-    friend std::ostream& operator<<(std::ostream& out, const Car& c);
-    friend std::istream& operator>>(std::istream& in, Car& c);
+    friend std::ostream& operator<<(std::ostream& out, const Character& character);
+    friend std::istream& operator>>(std::istream& in, Character& character);
 };
