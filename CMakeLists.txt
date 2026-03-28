@@ -6,8 +6,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # --- Лабораторна 2 ---
 add_executable(lab2
-        labs2/main.cpp
-        labs2/Characters1.cpp
+        labs2-4/main.cpp
+        labs2-4/Characters1.cpp
 )
 
 # --- Лабораторна 3 ---
