@@ -67,8 +67,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/git/oop_git/cmake-build-debug",
-		"source" : "D:/git/oop_git"
+		"build" : "C:/Projects/oop_git/cmake-build-debug",
+		"source" : "C:/Projects/oop_git"
 	},
 	"version" : 
 	{
