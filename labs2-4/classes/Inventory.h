@@ -12,6 +12,10 @@ private:
 
 public:
     Inventory(std::string item = "Potion", int itemCount = 1);
+    Inventory(const Inventory& other);
+    Inventory(Inventory&& other) noexcept;
+    Inventory& operator=(const Inventory& other);
+    Inventory& operator=(Inventory&& other) noexcept;
     ~Inventory();
 
     const std::string& getItem() const;
