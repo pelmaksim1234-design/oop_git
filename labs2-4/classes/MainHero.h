@@ -28,6 +28,7 @@ public:
 
     int getPower() const override;
     void printRole() const override;
+    void showBindingExample() const;
 
     MainHero& operator++();
     int operator-(const Character& other) const;

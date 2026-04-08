@@ -3,7 +3,7 @@
 
 #include "MainHero.h"
 
-class WarriorHero : public MainHero {
+class WarriorHero final : public MainHero {
 private:
     int armor;
 
@@ -17,7 +17,7 @@ public:
     ~WarriorHero() override;
 
     int getPower() const override;
-    void printRole() const override;
+    void printRole() const override final;
 };
 
 #endif

@@ -1,3 +1,3 @@
-C:/Projects/B366~1/oop_git/cmake-build-debug/CMakeFiles/lab2.dir
-C:/Projects/B366~1/oop_git/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Projects/B366~1/oop_git/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/git/oop_git/cmake-build-debug/CMakeFiles/lab2.dir
+D:/git/oop_git/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/git/oop_git/cmake-build-debug/CMakeFiles/rebuild_cache.dir

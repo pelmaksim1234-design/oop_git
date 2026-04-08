@@ -44,3 +44,7 @@ int BossEnemy::getPower() const {
 void BossEnemy::printRole() const {
     std::cout << "Role: BossEnemy, skill = " << specialSkill << std::endl;
 }
+
+void BossEnemy::showBindingExample() const {
+    std::cout << "Static binding -> BossEnemy::showBindingExample for " << getName() << std::endl;
+}

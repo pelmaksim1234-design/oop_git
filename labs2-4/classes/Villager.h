@@ -3,7 +3,7 @@
 
 #include "Npc.h"
 
-class Villager : public Npc {
+class Villager final : public Npc {
 private:
     std::string profession;
 
@@ -12,6 +12,7 @@ public:
     ~Villager() override;
 
     void printRole() const override;
+    std::string interact() const override;
 };
 
 #endif

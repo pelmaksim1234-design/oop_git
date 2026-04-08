@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"C:/Projects/B366~1/oop_git/cmake-build-debug/cmake_install.cmake"
+		"D:/git/oop_git/cmake-build-debug/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

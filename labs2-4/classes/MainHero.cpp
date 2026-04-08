@@ -82,6 +82,10 @@ void MainHero::printRole() const {
     std::cout << "Role: MainHero" << std::endl;
 }
 
+void MainHero::showBindingExample() const {
+    std::cout << "Static binding -> MainHero::showBindingExample for " << name << std::endl;
+}
+
 MainHero& MainHero::operator++() {
     ++level;
     xp += 10;

@@ -3,7 +3,7 @@
 
 #include "Enemy.h"
 
-class BossEnemy : public Enemy {
+class BossEnemy final : public Enemy {
 private:
     std::string specialSkill;
 
@@ -18,6 +18,7 @@ public:
 
     int getPower() const override;
     void printRole() const override;
+    void showBindingExample() const;
 };
 
 #endif

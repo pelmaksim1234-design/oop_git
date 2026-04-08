@@ -9,6 +9,7 @@ public:
     ~Npc() override;
 
     void printRole() const override;
+    virtual std::string interact() const = 0;
 };
 
 #endif

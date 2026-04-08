@@ -7,6 +7,22 @@
 #include <sstream>
 #include <utility>
 
+namespace {
+void showThroughBasePointer(const Character* character) {
+    std::cout << "Power via Character*: " << character->getPower() << std::endl;
+    character->printRole();
+}
+
+void showThroughBaseReference(const Character& character) {
+    std::cout << "Power via Character&: " << character.getPower() << std::endl;
+    character.printRole();
+}
+
+void showNpcInteraction(const Npc& npc) {
+    std::cout << npc.interact() << std::endl;
+}
+}
+
 int main() {
     std::cout << "--- Static field and method ---" << std::endl;
     Character::printObjectCount();
@@ -22,6 +38,35 @@ int main() {
     villager.printRole();
     boss.printRole();
     Character::printObjectCount();
+
+    std::cout << "\n--- Static method binding problem ---" << std::endl;
+    hero.showBindingExample();
+    boss.showBindingExample();
+    Character* baseHero = &hero;
+    Character* baseBoss = &boss;
+    baseHero->showBindingExample();
+    baseBoss->showBindingExample();
+
+    std::cout << "\n--- Run-time polymorphism via base class pointer ---" << std::endl;
+    showThroughBasePointer(&hero);
+    showThroughBasePointer(&warrior);
+    showThroughBasePointer(&boss);
+
+    std::cout << "\n--- Run-time polymorphism via base class reference ---" << std::endl;
+    showThroughBaseReference(hero);
+    showThroughBaseReference(villager);
+    showThroughBaseReference(boss);
+
+    std::cout << "\n--- Pure virtual function and interface-like Npc ---" << std::endl;
+    showNpcInteraction(villager);
+
+    std::cout << "\n--- Virtual destructor through base pointer ---" << std::endl;
+    Character* dynamicBoss = new BossEnemy("Hydra", 210, 5, 38, "PoisonRain");
+    delete dynamicBoss;
+
+    std::cout << "\n--- final modifier demonstration ---" << std::endl;
+    std::cout << "WarriorHero and BossEnemy/Villager are marked final in the hierarchy." << std::endl;
+    std::cout << "WarriorHero::printRole is also marked final." << std::endl;
 
     std::cout << "\n--- this pointer demonstration ---" << std::endl;
     hero.rename("AndriiTheBrave").heal(20).addXp(15);
