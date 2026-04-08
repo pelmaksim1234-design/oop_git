@@ -1,4 +1,7 @@
-#include "Characters1.h"
+#include "BossEnemy.h"
+#include "MainHero.h"
+#include "Villager.h"
+#include "WarriorHero.h"
 
 #include <iostream>
 #include <sstream>
