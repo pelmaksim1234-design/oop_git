@@ -74,6 +74,10 @@ void Character::levelUp() {
     ++level;
 }
 
+void Character::introduce() const {
+    std::cout << "Character introduce (non-virtual): " << name << std::endl;
+}
+
 int Character::getPower() const {
     return health + level * 10;
 }

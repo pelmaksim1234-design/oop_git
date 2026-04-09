@@ -17,7 +17,8 @@ public:
     ~WarriorHero() override;
 
     int getPower() const override;
-    void printRole() const override;
+    // Task 5: final method demo.
+    void printRole() const final;
 };
 
 #endif

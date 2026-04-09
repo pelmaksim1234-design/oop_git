@@ -12,6 +12,7 @@ public:
     ~Villager() override;
 
     void printRole() const override;
+    std::string getDialogue() const override;
 };
 
 #endif

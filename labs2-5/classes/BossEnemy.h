@@ -2,8 +2,10 @@
 #define BOSS_ENEMY_H
 
 #include "Enemy.h"
+#include "AbilityUser.h"
 
-class BossEnemy : public Enemy {
+// Task 5: final class demo.
+class BossEnemy final : public Enemy, public AbilityUser {
 private:
     std::string specialSkill;
 
@@ -16,8 +18,12 @@ public:
     BossEnemy& operator=(BossEnemy&& other) noexcept;
     ~BossEnemy() override;
 
+    void introduce() const;
     int getPower() const override;
     void printRole() const override;
+    // Task 8: interface implementation in a different class.
+    std::string getBattleTitle() const override;
+    int useAbilityPower() const override;
 };
 
 #endif

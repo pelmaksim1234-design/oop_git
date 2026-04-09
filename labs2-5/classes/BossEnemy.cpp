@@ -37,10 +37,22 @@ BossEnemy::~BossEnemy() {
     std::cout << "BossEnemy destructor: " << getName() << std::endl;
 }
 
+void BossEnemy::introduce() const {
+    std::cout << "BossEnemy introduce (hides non-virtual): " << getName() << std::endl;
+}
+
 int BossEnemy::getPower() const {
     return Enemy::getPower() + 50;
 }
 
 void BossEnemy::printRole() const {
     std::cout << "Role: BossEnemy, skill = " << specialSkill << std::endl;
+}
+
+std::string BossEnemy::getBattleTitle() const {
+    return "Boss " + getName();
+}
+
+int BossEnemy::useAbilityPower() const {
+    return getPower() + 25;
 }

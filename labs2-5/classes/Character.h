@@ -31,6 +31,9 @@ public:
 
     void setHealth(int newHealth);
     void levelUp();
+    // Task 1: non-virtual method for static binding demo.
+    void introduce() const;
+    // Task 2: virtual methods in base class.
     virtual int getPower() const;
     virtual void printRole() const;
 

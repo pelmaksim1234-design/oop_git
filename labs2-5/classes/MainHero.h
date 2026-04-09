@@ -3,8 +3,9 @@
 
 #include "Character.h"
 #include "Inventory.h"
+#include "AbilityUser.h"
 
-class MainHero : public Character {
+class MainHero : public Character, public AbilityUser {
 private:
     int xp;
     Inventory inventory;
@@ -25,9 +26,14 @@ public:
     MainHero& heal(int amount);
     MainHero& addXp(int amount);
     MainHero& rename(const std::string& newName);
+    // Task 1: hides non-virtual Character::introduce.
+    void introduce() const;
 
     int getPower() const override;
     void printRole() const override;
+    // Task 8: interface implementation.
+    std::string getBattleTitle() const override;
+    int useAbilityPower() const override;
 
     MainHero& operator++();
     int operator-(const Character& other) const;

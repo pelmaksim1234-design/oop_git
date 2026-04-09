@@ -12,3 +12,7 @@ Villager::~Villager() {
 void Villager::printRole() const {
     std::cout << "Role: Villager (" << profession << ")" << std::endl;
 }
+
+std::string Villager::getDialogue() const {
+    return "Welcome to our village. I am a " + profession + ".";
+}

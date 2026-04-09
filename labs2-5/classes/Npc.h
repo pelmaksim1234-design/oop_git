@@ -9,6 +9,8 @@ public:
     ~Npc() override;
 
     void printRole() const override;
+    // Task 7: pure virtual function in a regular class.
+    virtual std::string getDialogue() const = 0;
 };
 
 #endif

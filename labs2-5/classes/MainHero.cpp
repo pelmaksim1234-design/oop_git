@@ -74,12 +74,24 @@ MainHero& MainHero::rename(const std::string& newName) {
     return *this;
 }
 
+void MainHero::introduce() const {
+    std::cout << "MainHero introduce (hides non-virtual): " << name << std::endl;
+}
+
 int MainHero::getPower() const {
     return Character::getPower() + xp + inventory.getItemCount() * 5;
 }
 
 void MainHero::printRole() const {
     std::cout << "Role: MainHero" << std::endl;
+}
+
+std::string MainHero::getBattleTitle() const {
+    return "Hero " + name;
+}
+
+int MainHero::useAbilityPower() const {
+    return getPower() + xp / 2;
 }
 
 MainHero& MainHero::operator++() {
