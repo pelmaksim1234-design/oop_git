@@ -36,6 +36,7 @@ public:
     // Task 2: virtual methods in base class.
     virtual int getPower() const;
     virtual void printRole() const;
+    void showBindingExample() const;
 
     static int getObjectCount();
     static void printObjectCount();

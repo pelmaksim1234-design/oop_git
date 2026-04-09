@@ -86,6 +86,10 @@ void Character::printRole() const {
     std::cout << "Character role: base character" << std::endl;
 }
 
+void Character::showBindingExample() const {
+    std::cout << "Static binding -> Character::showBindingExample for " << name << std::endl;
+}
+
 int Character::getObjectCount() {
     return objectCount;
 }
