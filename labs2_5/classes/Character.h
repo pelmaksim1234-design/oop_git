@@ -15,6 +15,7 @@ protected:
 private:
     static int nextId;
     static int objectCount;
+    static void validateState(const std::string& name, int health, int level);
 
 public:
     Character(std::string name = "Unknown", int health = 100, int level = 1);

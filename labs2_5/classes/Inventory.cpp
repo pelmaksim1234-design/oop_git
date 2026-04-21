@@ -1,7 +1,15 @@
 #include "Inventory.h"
 
+#include "../lab6/GameExceptions.h"
+
 Inventory::Inventory(std::string item, int itemCount)
-    : item(std::move(item)), itemCount(itemCount < 0 ? 0 : itemCount) {
+    : item(std::move(item)), itemCount(itemCount) {
+    if (this->item.empty()) {
+        throw InventoryException("Inventory item name cannot be empty.");
+    }
+    if (this->itemCount < 0) {
+        throw InventoryException("Inventory item count cannot be negative.");
+    }
     std::cout << "Inventory constructor: " << this->item << " x" << this->itemCount << std::endl;
 }
 
@@ -48,11 +56,17 @@ int Inventory::getItemCount() const {
 }
 
 void Inventory::setItem(const std::string& newItem) {
+    if (newItem.empty()) {
+        throw InventoryException("Inventory item name cannot be empty.");
+    }
     item = newItem;
 }
 
 void Inventory::setItemCount(int newCount) {
-    itemCount = newCount < 0 ? 0 : newCount;
+    if (newCount < 0) {
+        throw InventoryException("Inventory item count cannot be negative.");
+    }
+    itemCount = newCount;
 }
 
 std::ostream& operator<<(std::ostream& os, const Inventory& inventory) {
@@ -62,8 +76,14 @@ std::ostream& operator<<(std::ostream& os, const Inventory& inventory) {
 
 std::istream& operator>>(std::istream& is, Inventory& inventory) {
     is >> inventory.item >> inventory.itemCount;
+    if (!is) {
+        throw InventoryException("Failed to read inventory from stream.");
+    }
+    if (inventory.item.empty()) {
+        throw InventoryException("Inventory item name cannot be empty.");
+    }
     if (inventory.itemCount < 0) {
-        inventory.itemCount = 0;
+        throw InventoryException("Inventory item count cannot be negative.");
     }
     return is;
 }

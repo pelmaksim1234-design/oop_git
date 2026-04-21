@@ -1,16 +1,32 @@
 #include "Character.h"
 
+#include "../lab6/GameExceptions.h"
+
 int Character::nextId = 1;
 int Character::objectCount = 0;
 
+void Character::validateState(const std::string& nameValue, int healthValue, int levelValue) {
+    if (nameValue.empty()) {
+        throw InvalidCharacterState("Character name cannot be empty.");
+    }
+    if (healthValue < 0) {
+        throw InvalidCharacterState("Character health cannot be negative.");
+    }
+    if (levelValue < 1) {
+        throw InvalidCharacterState("Character level must be at least 1.");
+    }
+}
+
 Character::Character(std::string name, int health, int level)
-    : name(std::move(name)), health(health < 0 ? 0 : health), level(level < 1 ? 1 : level), id(nextId++) {
+    : name(std::move(name)), health(health), level(level), id(nextId++) {
+    validateState(this->name, this->health, this->level);
     ++objectCount;
     std::cout << "Character constructor: " << this->name << ", id = " << id << std::endl;
 }
 
 Character::Character(const Character& other)
     : name(other.name), health(other.health), level(other.level), id(nextId++) {
+    validateState(name, health, level);
     ++objectCount;
     std::cout << "Character copy constructor: " << name << ", new id = " << id << std::endl;
 }
@@ -25,6 +41,7 @@ Character::Character(Character&& other) noexcept
 
 Character& Character::operator=(const Character& other) {
     if (this != &other) {
+        validateState(other.name, other.health, other.level);
         name = other.name;
         health = other.health;
         level = other.level;
@@ -67,7 +84,10 @@ int Character::getId() const {
 }
 
 void Character::setHealth(int newHealth) {
-    health = newHealth < 0 ? 0 : newHealth;
+    if (newHealth < 0) {
+        throw InvalidCharacterState("Character health cannot be negative.");
+    }
+    health = newHealth;
 }
 
 void Character::levelUp() {

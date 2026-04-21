@@ -1,3 +1,4 @@
-D:/git/oop_git/cmake-build-debug/CMakeFiles/lab2.dir
-D:/git/oop_git/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/git/oop_git/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Projects/Нова папка/oop_git/cmake-build-debug/CMakeFiles/lab5.dir
+C:/Projects/Нова папка/oop_git/cmake-build-debug/CMakeFiles/lab6.dir
+C:/Projects/Нова папка/oop_git/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Projects/Нова папка/oop_git/cmake-build-debug/CMakeFiles/rebuild_cache.dir

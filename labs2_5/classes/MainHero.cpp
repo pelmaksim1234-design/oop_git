@@ -1,7 +1,12 @@
 #include "MainHero.h"
 
+#include "../lab6/GameExceptions.h"
+
 MainHero::MainHero(std::string name, int health, int level, int xp, Inventory inventory)
-    : Character(std::move(name), health, level), xp(xp < 0 ? 0 : xp), inventory(std::move(inventory)) {
+    : Character(std::move(name), health, level), xp(xp), inventory(std::move(inventory)) {
+    if (this->xp < 0) {
+        throw InvalidCharacterState("Hero XP cannot be negative.");
+    }
     std::cout << "MainHero constructor: " << this->name << std::endl;
 }
 
@@ -18,6 +23,9 @@ MainHero::MainHero(MainHero&& other) noexcept
 
 MainHero& MainHero::operator=(const MainHero& other) {
     if (this != &other) {
+        if (other.xp < 0) {
+            throw InvalidCharacterState("Hero XP cannot be negative.");
+        }
         Character::operator=(other);
         xp = other.xp;
         inventory = other.inventory;
@@ -54,18 +62,18 @@ Inventory& MainHero::getInventory() {
 }
 
 MainHero& MainHero::heal(int amount) {
-    this->health += amount;
-    if (this->health < 0) {
-        this->health = 0;
+    if (amount < 0) {
+        throw InvalidCharacterState("Heal amount cannot be negative.");
     }
+    this->health += amount;
     return *this;
 }
 
 MainHero& MainHero::addXp(int amount) {
-    xp += amount;
-    if (xp < 0) {
-        xp = 0;
+    if (amount < 0) {
+        throw InvalidCharacterState("XP increment cannot be negative.");
     }
+    xp += amount;
     return *this;
 }
 
@@ -117,14 +125,20 @@ std::ostream& operator<<(std::ostream& os, const MainHero& hero) {
 
 std::istream& operator>>(std::istream& is, MainHero& hero) {
     is >> hero.name >> hero.health >> hero.level >> hero.xp >> hero.inventory;
+    if (!is) {
+        throw InvalidCharacterState("Failed to read hero from stream.");
+    }
+    if (hero.name.empty()) {
+        throw InvalidCharacterState("Hero name cannot be empty.");
+    }
     if (hero.health < 0) {
-        hero.health = 0;
+        throw InvalidCharacterState("Hero health cannot be negative.");
     }
     if (hero.level < 1) {
-        hero.level = 1;
+        throw InvalidCharacterState("Hero level must be at least 1.");
     }
     if (hero.xp < 0) {
-        hero.xp = 0;
+        throw InvalidCharacterState("Hero XP cannot be negative.");
     }
     return is;
 }
