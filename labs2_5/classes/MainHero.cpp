@@ -1,24 +1,21 @@
 #include "MainHero.h"
 
-#include "../lab6/GameExceptions.h"
+#include "GameExceptions.h"
 
 MainHero::MainHero(std::string name, int health, int level, int xp, Inventory inventory)
     : Character(std::move(name), health, level), xp(xp), inventory(std::move(inventory)) {
     if (this->xp < 0) {
         throw InvalidCharacterState("Hero XP cannot be negative.");
     }
-    std::cout << "MainHero constructor: " << this->name << std::endl;
 }
 
 MainHero::MainHero(const MainHero& other)
     : Character(other), xp(other.xp), inventory(other.inventory) {
-    std::cout << "MainHero copy constructor: " << name << std::endl;
 }
 
 MainHero::MainHero(MainHero&& other) noexcept
     : Character(std::move(other)), xp(other.xp), inventory(std::move(other.inventory)) {
     other.xp = 0;
-    std::cout << "MainHero move constructor: " << name << std::endl;
 }
 
 MainHero& MainHero::operator=(const MainHero& other) {
@@ -30,7 +27,6 @@ MainHero& MainHero::operator=(const MainHero& other) {
         xp = other.xp;
         inventory = other.inventory;
     }
-    std::cout << "MainHero copy operator=: " << name << std::endl;
     return *this;
 }
 
@@ -41,13 +37,10 @@ MainHero& MainHero::operator=(MainHero&& other) noexcept {
         inventory = std::move(other.inventory);
         other.xp = 0;
     }
-    std::cout << "MainHero move operator=: " << name << std::endl;
     return *this;
 }
 
-MainHero::~MainHero() {
-    std::cout << "MainHero destructor: " << name << std::endl;
-}
+MainHero::~MainHero() = default;
 
 int MainHero::getXp() const {
     return xp;
@@ -78,6 +71,9 @@ MainHero& MainHero::addXp(int amount) {
 }
 
 MainHero& MainHero::rename(const std::string& newName) {
+    if (newName.empty()) {
+        throw InvalidCharacterState("Hero name cannot be empty.");
+    }
     this->name = newName;
     return *this;
 }
@@ -124,21 +120,33 @@ std::ostream& operator<<(std::ostream& os, const MainHero& hero) {
 }
 
 std::istream& operator>>(std::istream& is, MainHero& hero) {
-    is >> hero.name >> hero.health >> hero.level >> hero.xp >> hero.inventory;
+    std::string newName;
+    int newHealth = 0;
+    int newLevel = 0;
+    int newXp = 0;
+    Inventory newInventory;
+
+    is >> newName >> newHealth >> newLevel >> newXp >> newInventory;
     if (!is) {
         throw InvalidCharacterState("Failed to read hero from stream.");
     }
-    if (hero.name.empty()) {
+    if (newName.empty()) {
         throw InvalidCharacterState("Hero name cannot be empty.");
     }
-    if (hero.health < 0) {
+    if (newHealth < 0) {
         throw InvalidCharacterState("Hero health cannot be negative.");
     }
-    if (hero.level < 1) {
+    if (newLevel < 1) {
         throw InvalidCharacterState("Hero level must be at least 1.");
     }
-    if (hero.xp < 0) {
+    if (newXp < 0) {
         throw InvalidCharacterState("Hero XP cannot be negative.");
     }
+
+    hero.name = std::move(newName);
+    hero.health = newHealth;
+    hero.level = newLevel;
+    hero.xp = newXp;
+    hero.inventory = std::move(newInventory);
     return is;
 }

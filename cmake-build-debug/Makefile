@@ -66,8 +66,8 @@ CMAKE_BINARY_DIR = "C:\Projects\Нова папка\oop_git\cmake-build-debug"
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
-	C:\Users\pohil\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available."
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
+	"C:\Program Files\CMake\bin\cmake-gui.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -222,6 +222,60 @@ labs2_5/classes/Enemy.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab6.dir\build.make CMakeFiles/lab6.dir/labs2_5/classes/Enemy.cpp.s
 .PHONY : labs2_5/classes/Enemy.cpp.s
 
+labs2_5/classes/GameApp.obj: labs2_5/classes/GameApp.cpp.obj
+.PHONY : labs2_5/classes/GameApp.obj
+
+# target to build an object file
+labs2_5/classes/GameApp.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab5.dir\build.make CMakeFiles/lab5.dir/labs2_5/classes/GameApp.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab6.dir\build.make CMakeFiles/lab6.dir/labs2_5/classes/GameApp.cpp.obj
+.PHONY : labs2_5/classes/GameApp.cpp.obj
+
+labs2_5/classes/GameApp.i: labs2_5/classes/GameApp.cpp.i
+.PHONY : labs2_5/classes/GameApp.i
+
+# target to preprocess a source file
+labs2_5/classes/GameApp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab5.dir\build.make CMakeFiles/lab5.dir/labs2_5/classes/GameApp.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab6.dir\build.make CMakeFiles/lab6.dir/labs2_5/classes/GameApp.cpp.i
+.PHONY : labs2_5/classes/GameApp.cpp.i
+
+labs2_5/classes/GameApp.s: labs2_5/classes/GameApp.cpp.s
+.PHONY : labs2_5/classes/GameApp.s
+
+# target to generate assembly for a file
+labs2_5/classes/GameApp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab5.dir\build.make CMakeFiles/lab5.dir/labs2_5/classes/GameApp.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab6.dir\build.make CMakeFiles/lab6.dir/labs2_5/classes/GameApp.cpp.s
+.PHONY : labs2_5/classes/GameApp.cpp.s
+
+labs2_5/classes/GameRepository.obj: labs2_5/classes/GameRepository.cpp.obj
+.PHONY : labs2_5/classes/GameRepository.obj
+
+# target to build an object file
+labs2_5/classes/GameRepository.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab5.dir\build.make CMakeFiles/lab5.dir/labs2_5/classes/GameRepository.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab6.dir\build.make CMakeFiles/lab6.dir/labs2_5/classes/GameRepository.cpp.obj
+.PHONY : labs2_5/classes/GameRepository.cpp.obj
+
+labs2_5/classes/GameRepository.i: labs2_5/classes/GameRepository.cpp.i
+.PHONY : labs2_5/classes/GameRepository.i
+
+# target to preprocess a source file
+labs2_5/classes/GameRepository.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab5.dir\build.make CMakeFiles/lab5.dir/labs2_5/classes/GameRepository.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab6.dir\build.make CMakeFiles/lab6.dir/labs2_5/classes/GameRepository.cpp.i
+.PHONY : labs2_5/classes/GameRepository.cpp.i
+
+labs2_5/classes/GameRepository.s: labs2_5/classes/GameRepository.cpp.s
+.PHONY : labs2_5/classes/GameRepository.s
+
+# target to generate assembly for a file
+labs2_5/classes/GameRepository.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab5.dir\build.make CMakeFiles/lab5.dir/labs2_5/classes/GameRepository.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab6.dir\build.make CMakeFiles/lab6.dir/labs2_5/classes/GameRepository.cpp.s
+.PHONY : labs2_5/classes/GameRepository.cpp.s
+
 labs2_5/classes/Inventory.obj: labs2_5/classes/Inventory.cpp.obj
 .PHONY : labs2_5/classes/Inventory.obj
 
@@ -357,60 +411,13 @@ labs2_5/classes/WarriorHero.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab6.dir\build.make CMakeFiles/lab6.dir/labs2_5/classes/WarriorHero.cpp.s
 .PHONY : labs2_5/classes/WarriorHero.cpp.s
 
-labs2_5/lab6/RaidParty.obj: labs2_5/lab6/RaidParty.cpp.obj
-.PHONY : labs2_5/lab6/RaidParty.obj
-
-# target to build an object file
-labs2_5/lab6/RaidParty.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab6.dir\build.make CMakeFiles/lab6.dir/labs2_5/lab6/RaidParty.cpp.obj
-.PHONY : labs2_5/lab6/RaidParty.cpp.obj
-
-labs2_5/lab6/RaidParty.i: labs2_5/lab6/RaidParty.cpp.i
-.PHONY : labs2_5/lab6/RaidParty.i
-
-# target to preprocess a source file
-labs2_5/lab6/RaidParty.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab6.dir\build.make CMakeFiles/lab6.dir/labs2_5/lab6/RaidParty.cpp.i
-.PHONY : labs2_5/lab6/RaidParty.cpp.i
-
-labs2_5/lab6/RaidParty.s: labs2_5/lab6/RaidParty.cpp.s
-.PHONY : labs2_5/lab6/RaidParty.s
-
-# target to generate assembly for a file
-labs2_5/lab6/RaidParty.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab6.dir\build.make CMakeFiles/lab6.dir/labs2_5/lab6/RaidParty.cpp.s
-.PHONY : labs2_5/lab6/RaidParty.cpp.s
-
-labs2_5/lab6/main.obj: labs2_5/lab6/main.cpp.obj
-.PHONY : labs2_5/lab6/main.obj
-
-# target to build an object file
-labs2_5/lab6/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab6.dir\build.make CMakeFiles/lab6.dir/labs2_5/lab6/main.cpp.obj
-.PHONY : labs2_5/lab6/main.cpp.obj
-
-labs2_5/lab6/main.i: labs2_5/lab6/main.cpp.i
-.PHONY : labs2_5/lab6/main.i
-
-# target to preprocess a source file
-labs2_5/lab6/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab6.dir\build.make CMakeFiles/lab6.dir/labs2_5/lab6/main.cpp.i
-.PHONY : labs2_5/lab6/main.cpp.i
-
-labs2_5/lab6/main.s: labs2_5/lab6/main.cpp.s
-.PHONY : labs2_5/lab6/main.s
-
-# target to generate assembly for a file
-labs2_5/lab6/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab6.dir\build.make CMakeFiles/lab6.dir/labs2_5/lab6/main.cpp.s
-.PHONY : labs2_5/lab6/main.cpp.s
-
 labs2_5/main.obj: labs2_5/main.cpp.obj
 .PHONY : labs2_5/main.obj
 
 # target to build an object file
 labs2_5/main.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab5.dir\build.make CMakeFiles/lab5.dir/labs2_5/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab6.dir\build.make CMakeFiles/lab6.dir/labs2_5/main.cpp.obj
 .PHONY : labs2_5/main.cpp.obj
 
 labs2_5/main.i: labs2_5/main.cpp.i
@@ -419,6 +426,7 @@ labs2_5/main.i: labs2_5/main.cpp.i
 # target to preprocess a source file
 labs2_5/main.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab5.dir\build.make CMakeFiles/lab5.dir/labs2_5/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab6.dir\build.make CMakeFiles/lab6.dir/labs2_5/main.cpp.i
 .PHONY : labs2_5/main.cpp.i
 
 labs2_5/main.s: labs2_5/main.cpp.s
@@ -427,6 +435,7 @@ labs2_5/main.s: labs2_5/main.cpp.s
 # target to generate assembly for a file
 labs2_5/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab5.dir\build.make CMakeFiles/lab5.dir/labs2_5/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab6.dir\build.make CMakeFiles/lab6.dir/labs2_5/main.cpp.s
 .PHONY : labs2_5/main.cpp.s
 
 # Help Target
@@ -448,6 +457,12 @@ help:
 	@echo ... labs2_5/classes/Enemy.obj
 	@echo ... labs2_5/classes/Enemy.i
 	@echo ... labs2_5/classes/Enemy.s
+	@echo ... labs2_5/classes/GameApp.obj
+	@echo ... labs2_5/classes/GameApp.i
+	@echo ... labs2_5/classes/GameApp.s
+	@echo ... labs2_5/classes/GameRepository.obj
+	@echo ... labs2_5/classes/GameRepository.i
+	@echo ... labs2_5/classes/GameRepository.s
 	@echo ... labs2_5/classes/Inventory.obj
 	@echo ... labs2_5/classes/Inventory.i
 	@echo ... labs2_5/classes/Inventory.s
@@ -463,12 +478,6 @@ help:
 	@echo ... labs2_5/classes/WarriorHero.obj
 	@echo ... labs2_5/classes/WarriorHero.i
 	@echo ... labs2_5/classes/WarriorHero.s
-	@echo ... labs2_5/lab6/RaidParty.obj
-	@echo ... labs2_5/lab6/RaidParty.i
-	@echo ... labs2_5/lab6/RaidParty.s
-	@echo ... labs2_5/lab6/main.obj
-	@echo ... labs2_5/lab6/main.i
-	@echo ... labs2_5/lab6/main.s
 	@echo ... labs2_5/main.obj
 	@echo ... labs2_5/main.i
 	@echo ... labs2_5/main.s

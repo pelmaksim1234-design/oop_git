@@ -13,6 +13,8 @@ set(LABS_2_5_SOURCES
         labs2_5/classes/Villager.cpp
         labs2_5/classes/Enemy.cpp
         labs2_5/classes/BossEnemy.cpp
+        labs2_5/classes/GameRepository.cpp
+        labs2_5/classes/GameApp.cpp
 )
 
 add_executable(lab5
@@ -22,18 +24,15 @@ add_executable(lab5
 
 target_include_directories(lab5 PRIVATE
         labs2_5/classes
-        labs2_5/lab6
 )
 
 add_executable(lab6
-        labs2_5/lab6/main.cpp
-        labs2_5/lab6/RaidParty.cpp
+        labs2_5/main.cpp
         ${LABS_2_5_SOURCES}
 )
 
 target_include_directories(lab6 PRIVATE
         labs2_5/classes
-        labs2_5/lab6
 )
 
 get_filename_component(MINGW_BIN_DIR "${CMAKE_CXX_COMPILER}" DIRECTORY)
